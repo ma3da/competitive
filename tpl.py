@@ -1,9 +1,22 @@
-def readis():
-    return map(int, input().strip().split())
+import typing
 
-T = int(input())
 
-while T:
-    T -= 1
+def rit(*args) -> typing.Iterator:
+    """Read input and yield split cast values.
+    """
+    func, funcs = int, (int, float, str)
+    sep = " "
+    for a in args:
+        if a in funcs:
+            func = a
+        elif isinstance(a, str):
+            sep = a
+    return map(func, input().strip().split(sep))
 
-    pass
+
+def main():
+    T = int(input())
+    for _ in range(T):
+
+
+main()
