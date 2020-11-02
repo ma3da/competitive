@@ -14,6 +14,10 @@ def rit(*args) -> typing.Iterator:
     return map(func, input().strip().split(sep))
 
 
+def pit(itr: typing.Iterable, sep:str=" ") -> None:
+    print(sep.join(map(str, itr)))
+
+
 def main():
     T = int(input())
     for _ in range(T):
